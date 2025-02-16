@@ -97,6 +97,8 @@ pub fn can_cast_types(from_type: &DataType, to_type: &DataType) -> bool {
         return true;
     }
 
+    dbg!(from_type, to_type);
+
     match (from_type, to_type) {
         (
             Null,
@@ -704,6 +706,9 @@ pub fn cast_with_options(
     if from_type == to_type {
         return Ok(make_array(array.to_data()));
     }
+
+    dbg!(from_type, to_type);
+
     match (from_type, to_type) {
         (
             Null,
